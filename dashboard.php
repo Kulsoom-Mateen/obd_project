@@ -8,6 +8,8 @@ class dashboard{
     //     $result = $conn->query($query);
     //     return $result;
     // } 
+    
+    /////////////////////////////////////////////dashboard search button coding//////////////////////////////////////
     public function search($conn){
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if(isset($_POST['submit'])){
@@ -31,6 +33,11 @@ class dashboard{
             }
         }
     }
+    /////////////////////////////////////////////dashboard search button coding//////////////////////////////////////
+    
+
+
+
 }
 
 $conn = new Database("localhost","root","ksmmtn921112","obd2");
@@ -187,23 +194,23 @@ $search_req = $d->search($link);
             <ul class="dropdown-menu">
             <div class="side-nav">
                 <a name="insert" id="insert" data-toggle="modal" data-target="#insert_data_Modal">Add Customer</a>
-                <a href="user_profile.php?name=<?php echo $name1;?>" onclick="profile()">Delete customer</a>
+                <a>Delete customer</a>
             </div>
             </ul>
         </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Details <span class="caret"></span></a>
             <ul class="dropdown-menu">
             <div class="side-nav">
-                <a href="user_profile.php?name=<?php echo $name1;?>" onclick="profile()">Update</a>
-                <a href="user_profile.php?name=<?php echo $name1;?>" onclick="profile()">Statistics</a>
-                <a href="user_profile.php?name=<?php echo $name1;?>" onclick="profile()">Report</a>
+                <a>Update</a>
+                <a>Statistics</a>
+                <a>Report</a>
             </div>
             </ul>
         </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings <span class="caret"></span></a>
             <ul class="dropdown-menu">
             <div class="side-nav">
-                <a href="user_profile.php?name=<?php echo $name1;?>" onclick="profile()">Reset password</a>
+                <a>Reset password</a>
                 <a href="login.php">Logout</a>
             </div>
             </ul>
@@ -220,10 +227,16 @@ $search_req = $d->search($link);
         </li>
         <li style="margin-top:10px;margin-left:13px;">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+
+            <!-- /////////////////////////////////////////////dashboard search button coding/////////////////////////////////////// -->
                 <!-- <input style="width:250px;float:left;" type="text" class="form-control" id="inputSuccess2" placeholder="Search" name="search"> -->
                 <!-- <span class="glyphicon glyphicon-search form-control-feedback" style="float:left;margin-right:40px;" ></span> -->
                 <!-- <input type="submit" name="submit"value=">>" style="margin-left:10px;margin-top:1px;height:30px;width:30px;background-color:white;color:black;" class="btn btn-info btn-xs view_data"> -->
-                </br><span class="error" style="color:white;margin-left:50px;"><?php echo $search_req;?></span>
+            <!-- /////////////////////////////////////////////dashboard search button coding////////////////////////////////////// -->
+
+
+        </br><span class="error" style="color:white;margin-left:50px;"><?php echo $search_req;?></span>
             </form>
         </li>
     </ul>
