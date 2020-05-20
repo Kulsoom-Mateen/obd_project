@@ -37,48 +37,6 @@ $c = new search_by_name();
 $c->search($link);
 ?>
 
-<!-- $servername = "localhost";
-$username = "root";
-$password = "ksmmtn921112";
-$dbname = "obd2";
-
-
-$invalid="";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-$search_req="";
-
-//for sending variables to customer page
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-if(isset($_POST['submit'])){
-    if(!empty($_POST['search_text'])){
-        // $searchq=$final;
-        session_start();
-        $searchq=$_POST['search_text'];
-        // $final=$_SESSION['search2'];
-        // $searchq=$final;
-        // echo $final;
-        $_SESSION['search1']=$searchq;
-        $search_req="";
-        $sql = mysqli_query($conn,"SELECT name FROM users WHERE name = '$searchq'");
-        if(mysqli_num_rows($sql) > 0){
-            header("location:customer_search.php");
-        }
-        else{
-            $search_req="No search result found for '$searchq'";
-        }
-    }   
-    else{
-        $search_req="Search should be filled";
-    }
-}
-} -->
-<!-- ?> -->
-<!-- style="background-color:rgba(200,200,200,1);" -->
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
