@@ -17,7 +17,6 @@ class customer_search{
             $this->vehicle=$row1["vehicle"];
             $this->email=$row1["email"];
         }
-        //This query needs to be changed
         $this->sql = "SELECT bulk_id,batch_id,speed,fuel_level,coolant_temperature,intake_manifold_abs_pressure,intake_air_temperature,mass_flow_rate,
                 throttle_position,engine_load FROM data_bulk WHERE bulk_id in (SELECT MAX(dd.bulk_id) FROM data_bulk dd , data_batch d , users u 
                 where dd.batch_id=d.batch_id and (d.user_id='$this->id1' or u.name='$this->id1'))"; 
@@ -332,7 +331,7 @@ if (!$conn) {
 </nav>
 <script>
     function back(){
-        location.replace("http://localhost/graph/dashboard.php")
+        location.replace("dashboard.php")
     }
 </script>
 <div style="margin-top:-19px;background-color:rgba(110,0,160,0.2);padding:10px;width:100%;flex-wrap:wrap;"> 
